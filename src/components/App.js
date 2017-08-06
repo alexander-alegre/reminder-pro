@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addReminder, deleteReminder } from '../actions/index';
+import { addReminder, deleteReminder, clearReminders } from '../actions/index';
 import moment from 'moment';
 
 class App extends React.Component {
@@ -13,13 +13,10 @@ class App extends React.Component {
     }
 
     addReminder() {
-        console.log('this.state.dueDate', this.state.dueDate);
         this.props.addReminder(this.state.text, this.state.dueDate);
     }
 
     deleteReminder(id) {
-        console.log('deleting in app', id);
-        console.log('this.props', this.props);
         this.props.deleteReminder(id);
     }
 
@@ -67,6 +64,9 @@ class App extends React.Component {
                 <div className="rendered-list">
                     { this.renderReminders() }
                 </div>
+                <button onClick={() => this.props.clearReminders()} className="btn btn-danger">
+                    Clear All
+                </button>
             </div>
         );
     }
@@ -79,4 +79,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, { addReminder, deleteReminder })(App);
+export default connect(mapStateToProps, { addReminder, deleteReminder, clearReminders })(App);
