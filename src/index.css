@@ -1,0 +1,16 @@
+body {
+    font-family: Roboto;
+}
+
+.list-group-item {
+    border: 1px solid rgba(202, 18, 255, .4);
+    margin: 2px 0;
+}
+
+.fa {
+    font-size: 20px;
+}
+
+.rendered-list {
+    margin-top: 20px;
+}
