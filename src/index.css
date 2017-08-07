@@ -14,3 +14,36 @@ body {
 .rendered-list {
     margin-top: 20px;
 }
+
+.s-alert-error {
+     background: rgba(201, 48, 44, .8); 
+}
+
+
+.animate-enter {
+  opacity: 0.01;
+}
+
+.animate-enter.animate-enter-active {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.animate-leave {
+  opacity: 1;
+}
+
+.animate-leave.animate-leave-active {
+  opacity: 0.01;
+  transform: translate3d(250px,0,0);
+  transition: opacity .5s ease-in-out;
+}
+
+.animate-appear {
+  opacity: 0.01;
+}
+
+.animate-appear.animate-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in-out;
+}
